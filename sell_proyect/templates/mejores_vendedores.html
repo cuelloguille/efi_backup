@@ -1,0 +1,27 @@
+{% extends 'template_base.html' %}
+
+{% block content %}
+    <h1 class="text-center mb-4">Mejores Vendedores</h1>
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID Vendedor</th>
+                <th>Nombre de Usuario</th>
+                <th>País</th>
+                <th>Cantidad de Productos Vendidos</th>
+                <th>Total Ganado</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for vendedor in mejores_vendedores %}
+            <tr>
+                <td>{{ vendedor.id_vendedor }}</td>
+                <td>{{ vendedor.credenciales.nombre_usuario }}</td>
+                <td>{{ vendedor.pais }}</td>
+                <td>{{ vendedor.cantidad_de_productos_vendidos }}</td>
+                <td>{{ vendedor.total_ganado }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
